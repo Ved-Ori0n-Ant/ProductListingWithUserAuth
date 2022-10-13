@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 const NavDrawerScreen = () => {
     return (
       <Drawer.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
-        <Drawer.Screen name="Home" component={TabNav} />  
+        <Drawer.Screen name="Dash board" component={TabNav} />  
         <Drawer.Screen name="Explore" component={Products} />  
         <Drawer.Screen name="Your orders" component={Order} />
         <Drawer.Screen name="Cart" component={Cart} />

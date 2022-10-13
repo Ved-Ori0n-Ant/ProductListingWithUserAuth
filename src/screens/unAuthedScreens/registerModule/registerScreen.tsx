@@ -92,9 +92,9 @@ const Register = () => {
               onPress={passwordVisibility}
               style={{alignSelf: 'flex-end'}}>
               {isVissible ? (
-                <Image source={EYE_INVISIBLE} style = {{width: 20, height: 20}} />
-              ) : (
                 <Image source={EYE_VISIBLE} style = {{width: 20, height: 20}} />
+              ) : (
+                <Image source={EYE_INVISIBLE} style = {{width: 20, height: 20}} />
               )}
             </TouchableOpacity>
           </View>
@@ -123,9 +123,9 @@ const Register = () => {
               onPress={passwordVisibilityReconfirmation}
               style={{alignSelf: 'flex-end'}}>
               {isVissibleReconfirmation ? (
-                <Image source={EYE_INVISIBLE} style = {{width: 20, height: 20}} />
-              ) : (
                 <Image source={EYE_VISIBLE} style = {{width: 20, height: 20}} />
+              ) : (
+                <Image source={EYE_INVISIBLE} style = {{width: 20, height: 20}} />
               )}
             </TouchableOpacity>
           </View>

@@ -1,9 +1,10 @@
 import * as React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/authedScreens/homeScreen";
-import ProfileScreen from "../screens/authedScreens/profileScreen";
-import SettingScreen from "../screens/authedScreens/settings";
+import HomeScreen from "../screens/authedScreens/tabScreens/homeScreen";
+import ProfileScreen from "../screens/authedScreens/tabScreens/profileScreen";
+import SettingScreen from "../screens/authedScreens/tabScreens/settingsScreens/settings";
 import { Image } from "react-native";
+import NavDrawerScreen from "./drawerNav";
 
 const HOME = require('../assets/home.png');
 const SETTING = require('../assets/setting.png');

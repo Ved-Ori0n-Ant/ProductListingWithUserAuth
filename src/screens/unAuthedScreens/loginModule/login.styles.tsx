@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
   welcomeText: {
     fontSize: 25,
     fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: 25,
+    marginTop: 25,
   },
   signInButton: {
     backgroundColor: '#3d73dd',

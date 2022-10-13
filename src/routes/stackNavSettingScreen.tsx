@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SettingScreen from '../screens/authedScreens/settings';
-import PrivacyPolicy from '../screens/authedScreens/privacyPolicy';
-import AboutPage from '../screens/authedScreens/aboutPage';
+import SettingScreen from '../screens/authedScreens/tabScreens/settingsScreens/settings';
+import PrivacyPolicy from '../screens/authedScreens/tabScreens/settingsScreens/privacyPolicy';
+import AboutPage from '../screens/authedScreens/tabScreens/settingsScreens/aboutPage';
 
 const Stack = createNativeStackNavigator();
 

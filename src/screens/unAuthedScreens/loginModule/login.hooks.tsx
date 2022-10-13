@@ -38,23 +38,10 @@ export function useLoginHook() {
       const storage: storageType = temp !== null ? JSON.parse(temp) : null;
       console.log(storage);
       if (email === storage.emailStorage && password === storage.passStorage) {
-        Alert.alert('Validate Sucess', '', [
-          {
-            text: 'Ok',
-            onPress: () => {
-              // navigation.reset({
-              //   index: 0,
-              //   routes: [
-              //     {
-              //       name: 'ProductCart Screens',
-              //     },
-              //   ],
-              // });
-            },
-          },
-        ]);
+        navigation.navigate('Explore')
       } else {
         Alert.alert('Incorrect ID or Password');
+        navigation.navigate('Register');
       }
       return storage;
     } catch (error) {
@@ -111,7 +98,6 @@ export function useLoginHook() {
       correct
     ) {
       setForIsValidate(true);
-      console.log('hello');
     }
 
     if (isValidate) {
