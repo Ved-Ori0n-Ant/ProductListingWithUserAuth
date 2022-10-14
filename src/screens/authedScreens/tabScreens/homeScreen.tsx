@@ -65,7 +65,7 @@ const Home = ({navigation}: {navigation: Navigation}) => {
             itemWidth={260}
             renderItem={renderItem}
             hasParallaxImages={true}
-            //loop={true}
+            loop={true}
             ref={sliderRef}
           />
         </View>
@@ -73,8 +73,8 @@ const Home = ({navigation}: {navigation: Navigation}) => {
       <ScrollView horizontal={true} scrollEnabled={true}>
         <FlatListComponent
           data={dummyData}
-          numberColumns={2}
-          style={{width: 160, margin: 5}}
+          numberColumns={1}
+          style={styles.imageContainer}
           textStyle={{flexShrink: 1, flexWrap: 'wrap', marginTop: 5}}
           scrollEnable={false}
           onPress={() => navigation.navigate('Products', {screen: 'Explore'})}
@@ -87,34 +87,41 @@ const Home = ({navigation}: {navigation: Navigation}) => {
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, paddingTop: 10},
+  container: {
+    flex: 1,
+    paddingTop: 10,
+    backgroundColor: '#00aabaaa',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   carouselContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginLeft: 10,
+    alignSelf: 'center',
+    marginLeft: 17,
     marginRight: 10,
-    borderColor: 'skyblue',
-    borderWidth: 1,
     padding: 5,
   },
   renderItemContainer: {
     borderRadius: 5,
     height: 250,
-    marginLeft: 25,
+    marginHorizontal: 5,
+    justifyContent: 'space-between',
   },
   imageContainer: {
     flex: 1,
     marginBottom: Platform.select({ios: 0, android: 1}),
-    backgroundColor: 'white',
+    backgroundColor: '#c0c0c0c0',
     borderRadius: 8,
+    width: 360,
   },
   image: {
-    height: 200,
+    height: 250,
     maxwidth: 250,
     borderWidth: 1,
     borderRadius: 15,
     borderColor: 'black',
-    resizeMode: 'cover',
+    // resizeMode: 'cover',
   },
   nameText: {
     marginTop: 10

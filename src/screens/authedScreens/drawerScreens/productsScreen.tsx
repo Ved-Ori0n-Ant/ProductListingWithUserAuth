@@ -37,11 +37,11 @@ const dummyData = [
 
 const Products = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, flexDirection: 'column'}}>
       <FlatListComponent
         data={dummyData}
-        numberColumns={2}
-        style={{width: 150, margin: 5}}
+        numberColumns={1}
+        style={{width: 360, margin: 5, backgroundColor: '#afaabaaa'}}
         textStyle={{flexShrink: 1, flexWrap: 'wrap', marginTop: 5}}
       />
     </View>

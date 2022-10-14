@@ -26,46 +26,49 @@ const dummyCartOrderData = [
 const Cart = () => {
   return (
     <View style={styles.container}>
-      <FlatList
-        data={dummyCartOrderData}
-        renderItem={({item}) => (
-          <TouchableOpacity>
-            <View style={styles.listContainer}>
-              <View style={styles.productImgConatiner}>
-                <Image source={{uri: item.img}} style={styles.productImg} />
-              </View>
-              <View style={styles.infoContainer}>
-                <Text style={[styles.infoText, styles.namePriceText]}>
-                  {item.name}
-                </Text>
-                <Text style={[styles.infoText, styles.aboutText]}>
-                  {item.about}
-                </Text>
-                <Text style={[styles.infoText, styles.namePriceText]}>
-                  ${item.pricePerPieice}
-                </Text>
-                <View style={[styles.infoText, styles.quantity]}>
-                  <Minus width={16} height={16} />
-                  <Text style={styles.quantityText}>{item.quantity}</Text>
-                  <Plus width={16} height={16} />
+      <View>
+        <Text style = {{fontSize: 25, fontWeight: 'bold', alignSelf: 'center', marginBottom: 13}}>-: Order Summary :-</Text>
+        <FlatList
+          data={dummyCartOrderData}
+          renderItem={({item}) => (
+            <TouchableOpacity>
+              <View style={styles.listContainer}>
+                <View style={styles.productImgConatiner}>
+                  <Image source={{uri: item.img}} style={styles.productImg} />
+                </View>
+                <View style={styles.infoContainer}>
+                  <Text style={[styles.infoText, styles.namePriceText]}>
+                    {item.name}
+                  </Text>
+                  <Text style={[styles.infoText, styles.aboutText]}>
+                    {item.about}
+                  </Text>
+                  <Text style={[styles.infoText, styles.namePriceText]}>
+                    ${item.pricePerPieice}
+                  </Text>
+                  <View style={[styles.infoText, styles.quantity]}>
+                    <Minus width={16} height={16} />
+                    <Text style={styles.quantityText}>{item.quantity}</Text>
+                    <Plus width={16} height={16} />
+                  </View>
+                </View>
+                <View style={styles.crossButtonImg}>
+                  <Cross width={16} height={16} />
                 </View>
               </View>
-              <View style={styles.crossButtonImg}>
-                <Cross width={16} height={16} />
-              </View>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-      <View style={styles.totalCostContainer}>
-        <Text style={styles.totalCostText}>Total Cost:- </Text>
-        <Text style={styles.priceText}>
-          $
-          {dummyCartOrderData[0].quantity *
-            dummyCartOrderData[0].pricePerPieice -
-            dummyCartOrderData[0].discount}
-          (${dummyCartOrderData[0].discount} Off)
-        </Text>
+            </TouchableOpacity>
+          )}
+        />
+        <View style={styles.totalCostContainer}>
+          <Text style={styles.totalCostText}>Total Cost:- </Text>
+          <Text style={styles.priceText}>
+            $
+            {dummyCartOrderData[0].quantity *
+              dummyCartOrderData[0].pricePerPieice -
+              dummyCartOrderData[0].discount}
+            (${dummyCartOrderData[0].discount} Off)
+          </Text>
+        </View>
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Check Out" />

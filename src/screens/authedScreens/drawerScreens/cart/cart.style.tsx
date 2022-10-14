@@ -2,27 +2,30 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    margin: 5,
-    borderColor: 'skyblue',
-    borderWidth: 2,
+    flex: 1,
+    margin: 15,
+    justifyContent: 'space-evenly'
   },
   listContainer: {
     flexDirection: 'row',
     borderColor: 'skyblue',
     borderBottomWidth: 1,
+    height: 200
   },
   productImgConatiner: {
-    flex: 2,
+    flex: 1,
+    padding: 8,
   },
   productImg: {
     height: '100%',
     width: '100%',
   },
   infoContainer: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
     padding: 15,
+    margin: 7,
   },
   infoText: {
     marginHorizontal: 5,
@@ -58,7 +61,7 @@ const styles = StyleSheet.create({
   },
   totalCostContainer: {
     flexDirection: 'row',
-    marginTop: 10,
+    margin: 7,
     borderColor: 'skyblue',
     borderBottomWidth: 1,
   },

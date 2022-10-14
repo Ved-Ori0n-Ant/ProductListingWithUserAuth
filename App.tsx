@@ -20,9 +20,9 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name = 'Root Screen' component={RootScreen} options = {{headerShown: false}}/>
-        <Stack.Screen name = 'Landing Screen' component={NavUnAuthScreens} options = {{headerShown: false}}/>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name = 'Root Screen' component={RootScreen} />
+        <Stack.Screen name = 'Landing Screen' component={NavUnAuthScreens} />
         <Stack.Screen name = 'Explore' component={TabNav} />
         <Stack.Screen name = 'Products' component={NavDrawerScreen} />
         <Stack.Screen name = 'Contact devs' component={SettingScreenNavigation} />

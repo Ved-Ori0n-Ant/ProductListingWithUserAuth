@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+//import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -10,12 +10,16 @@ import styles from './login.styles';
 const EYE_INVISIBLE = require('../../../assets/eye-invisible.png');
 const EYE_VISIBLE = require('../../../assets/eye-visible.png');
 
-const Login = () => {
+interface Navigation {
+  navigate(destination: string): void;
+}
+
+const Login = ({navigation}: {navigation: Navigation}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [emaillFocused, setEmailFocused] = useState(false);
   const [passFocused, setPassFocused] = useState(false);
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
 
   const passwordVisibility = () => {
     setIsVisible(!isVisible);
@@ -31,7 +35,10 @@ const Login = () => {
         AsyncStorage.getItem('user_data')
             .then(value => {
                 if (value != null) {
+                  setTimeout(() => {
+                    navigation.navigate('Root Screen')
                     navigation.navigate('Explore');
+                  }, 3000)
                 }
             })
     } catch (error) {
@@ -50,8 +57,8 @@ const Login = () => {
         }
         const jsonValue = JSON.stringify(credentials)
         await AsyncStorage.setItem('user_data', jsonValue)
-        navigation.navigate('Explore')
-        setEmail('');
+        navigation.navigate('Explore')  
+        // setEmail('');
         setPassword('');
       } catch (e) {
         console.log(e);
@@ -113,7 +120,8 @@ const Login = () => {
           <TextInput
             style = {{color: 'black'}}
             placeholder="Email*"
-            placeholderTextColor={'red'}
+            keyboardType='email-address'
+            placeholderTextColor={'#f0f0f0'}
             value={email}
             onFocus={() => setEmailFocused(true)}
             onBlur={() => setEmailFocused(false)}
@@ -134,7 +142,7 @@ const Login = () => {
           <TextInput
             placeholder="Password*"
             style = {{color: 'black'}}
-            placeholderTextColor={'red'}
+            placeholderTextColor={'#f0f0f0'}
             secureTextEntry={secureTextEntry}
             value={password}
             onFocus={() => setPassFocused(true)}

@@ -2,8 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    padding: 10,
+    backgroundColor: '#c0c0c0c0',
+    padding: 40,
     flex: 1,
   },
   component: {
@@ -15,15 +15,16 @@ const styles = StyleSheet.create({
     width: 15,
   },
   errorText: {
-    color: 'red',
+    color: '#ff00aa',
     fontWeight: 'bold',
     marginVertical: 2,
   },
   textInputContainer: {
     flexDirection: 'row',
-    borderColor: 'blue',
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     alignItems: 'center',
+    backgroundColor: '#a0a0a0c0',
+    padding: 7, 
   },
   buttonText: {
     color: 'blue',

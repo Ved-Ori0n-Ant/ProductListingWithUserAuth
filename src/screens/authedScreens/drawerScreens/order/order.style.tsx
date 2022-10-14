@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#c0c0c0c0',
     borderBottomColor: '#EDEDED',
     borderBottomWidth: 5,
   },
@@ -14,19 +14,20 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
   img: {
-    height: 50,
-    width: 50,
-    borderRadius: 15,
+    height: 80,
+    width: 80,
+    borderRadius: 7,
   },
   statusText: {
     borderWidth: 1,
-    borderColor: 'yellow',
+    borderColor: 'black',
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 1,
     alignSelf: 'flex-end',
     marginRight: 10,
     fontWeight: 'bold',
+    backgroundColor: '#00c600'
   },
   orderIdText: {
     color: '#3d73dd',

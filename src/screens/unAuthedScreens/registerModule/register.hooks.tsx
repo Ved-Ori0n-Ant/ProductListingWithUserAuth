@@ -40,24 +40,24 @@ export function useRegisterHook() {
     }
   }, [isValidationOn, emailError, passwordError, passwordCheckingError]);
 
-  const storeData = async () => {
-    try {
-      const storage: storageType = {emailStorage: email, passStorage: password};
-      console.log(storage);
-      const jsonValue = JSON.stringify(storage);
-      await AsyncStorage.setItem('user_data', jsonValue);
-      Alert.alert('Validate Sucess', '', [
-        // {
-        //   text: 'OK',
-        //   onPress: () => {
-        //     navigation.navigate('Login');
-        //   },
-        // },
-      ]);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const storeData = async () => {
+  //   try {
+  //     const storage: storageType = {emailStorage: email, passStorage: password};
+  //     console.log(storage);
+  //     const jsonValue = JSON.stringify(storage);
+  //     await AsyncStorage.setItem('user_data', jsonValue);
+  //     Alert.alert('Validate Sucess', '', [
+  //       {
+  //         text: 'OK',
+  //         onPress: () => {
+  //           navigation.navigate('Landing Screen');
+  //         },
+  //       },
+  //     ]);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   const checkEmail = (value: string, fromRegister: boolean = false) => {
     if (isRegistered || fromRegister) {
@@ -123,7 +123,7 @@ export function useRegisterHook() {
     setIsValidationOn(true);
 
     if (isValidate) {
-      storeData();
+      //storeData();
       setEmail('');
       setPassword('');
       setPasswordChecking('');

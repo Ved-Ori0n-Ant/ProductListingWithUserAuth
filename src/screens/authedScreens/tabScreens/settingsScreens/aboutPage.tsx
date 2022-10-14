@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 
 const AboutPage = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', borderColor: '#3a2fffc0'}}>
+    <View style={{flex: 1, justifyContent: 'space-around', backgroundColor: '#c0c0c0c0', padding: 27,}}>
       <Text>// Practical - 3</Text>
       <Text>
         - We have to create a standards full navigation structure for

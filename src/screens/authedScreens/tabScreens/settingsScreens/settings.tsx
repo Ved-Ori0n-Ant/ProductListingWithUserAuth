@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, TouchableOpacity, Text, StyleSheet, Button} from 'react-native';
+import {FlatList, TouchableOpacity, Text, StyleSheet, Button, Alert, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface Navigation {
@@ -16,8 +16,29 @@ const SettingScreen = ({navigation}: {navigation: Navigation}) => {
     }
   }
 
+  const logOutPressed = () => {
+    Alert.alert(
+      'Logout',
+      'Are you sure you want to logout?',
+      [
+        {
+          text: 'No',
+          onPress: () => console.log('No button pressed'),
+          style: 'cancel',
+        },
+        {
+          text: 'Yes',
+          onPress: () => {
+            navigation.navigate('Landing Screen', {screen: 'Login'});
+            removeData();
+          },
+        }
+      ]
+    )
+  }
+
   return (
-    <>
+    <View style = {{backgroundColor: '#c0c0c0', flex: 1, flexDirection: 'column', justifyContent: 'space-around'}}>
       <FlatList
         data={['About Page', 'Privacy Policy']}
         renderItem={({item}) => (
@@ -26,15 +47,16 @@ const SettingScreen = ({navigation}: {navigation: Navigation}) => {
               navigation.navigate('Contact devs',{screen: item});
             }}
             style={styles.container}>
-            <Text>{item}</Text>
+            <Text style = {{fontSize: 14, margin: 7}}>{item}</Text>
           </TouchableOpacity>
         )}
       />
       <Button title='Log out' onPress={() => {
-        navigation.navigate('Root Screen');
-        removeData();
+        //navigation.navigate('Landing Screen');
+        //removeData();
+        logOutPressed();
       }}/>
-    </>
+    </View>
   );
 };
 
@@ -46,5 +68,6 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     marginHorizontal: 16,
     borderColor: 'black',
+    borderBottomWidth: 3,
   },
 });
